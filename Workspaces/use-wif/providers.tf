@@ -1,6 +1,6 @@
 terraform {
   cloud {
-    organization = var.tfc_organization
+    organization = "jliauw-demo-org"
     workspaces {
       name = "use-wif"
     }

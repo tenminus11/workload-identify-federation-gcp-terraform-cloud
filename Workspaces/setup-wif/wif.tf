@@ -1,5 +1,5 @@
 locals {
-  google_project_id = "no-crown-jewels-inside"
+  google_project_id = "hashitalks-wif-demo"
   organization_name = "jliauw-demo-org"
   # list of HCP Terraform workspace IDs where the Workload Identity Federation configuration can be accessed
   workspace_ids = [
