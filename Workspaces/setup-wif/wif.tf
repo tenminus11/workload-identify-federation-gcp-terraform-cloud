@@ -1,6 +1,8 @@
 locals {
   google_project_id = "hashitalks-wif-demo"
-  organization_name = "jliauw-demo-org"
+  #organization_name = "jliauw-demo-org"
+  organization_name = "org-SmbSiuNXxCSamGbY"
+
   # list of HCP Terraform workspace IDs where the Workload Identity Federation configuration can be accessed
   workspace_ids = [
     # Navigate in the TFC Workspace GUI to general settings to find the ID "ws-XXXXXXXXXXXXXXXX",
