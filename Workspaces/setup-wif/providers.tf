@@ -14,6 +14,7 @@ terraform {
   }
 }
 
+# Create a env variable in your Terraform Cloud TFE_TOKEN
 provider "tfe" {
   hostname = "app.terraform.io"
 }
