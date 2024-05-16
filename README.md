@@ -7,6 +7,10 @@ Identity federation lets HCP Terraform impersonate a service account through its
 ## Using Workload Identity Federation
 Using HashiCorp Terraform, you have the ability to create a Workload Identity [Pool](https://cloud.google.com/iam/docs/workload-identity-federation#pools) and [Provider](https://cloud.google.com/iam/docs/workload-identity-federation#providers), which HCP Terraform uses to request a federated token from. This token is then passed to the Google Terraform provider, which impersonates a service account to obtain temporary credentials to plan or apply Terraform with.
 
+## Prerequisites
+1. Setup initial connection between Terraform Cloud and Google Cloud with Service Account key.
+2. Create Terraform Cloud API token and define as veriable in Terraform Cloud.
+
 ## Steps for succesful deployment: 
 1. For initial setup create a temporary Service Account with the editor role. This Service Account will be used to connect Terraform Cloud to Google Cloud. Don't forget to remove this Service Accounce once Workload Identity Federation has been setup. 
 2. Add the Service Account JSON key to Terraform Cloud as a sensitive variable.
@@ -17,4 +21,10 @@ Using HashiCorp Terraform, you have the ability to create a Workload Identity [P
 7. We can run the Terraform plan in use-wif folder to create a test resource in our Google Cloud project. A new short lived access token will be created for each run.
 8. Don't forget to remove the temporary Service Account that was used to initial connect Terraform Cloud to Google Cloud.
 
-Please reach out to me if you have any questions.
+# Read more
+1. https://www.hashicorp.com/blog/access-google-cloud-from-hcp-terraform-with-workload-identity 
+2. https://registry.terraform.io/providers/hashicorp/tfe/latest/docs
+3. https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/iam_workload_identity_pool_provider#example-usage---iam-workload-identity-pool-provider-oidc-full
+4. https://developer.hashicorp.com/terraform/tutorials/cloud/dynamic-credentials
+
+Reach out to me if you have any questions.
