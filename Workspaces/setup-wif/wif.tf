@@ -1,5 +1,5 @@
 #-------------------------------------------------------------------------------
-# Deploy Google Cloud Workload Identity (WIF) for HCP Terraform v1.0.0
+# Deploy Google Cloud Workload Identity (WIF) for HCP Terraform
 #-------------------------------------------------------------------------------
 
 # Local variables
@@ -39,7 +39,6 @@ resource "google_iam_workload_identity_pool_provider" "hcp_tf" {
     "attribute.terraform_full_workspace" = "assertion.terraform_full_workspace"
   }
   oidc {
-    #allowed_audiences = "https://iam.googleapis.com/projects/523177317825/locations/global/workloadIdentityPools/hcp-tf-pool/providers/hcp-tf-provider"
     issuer_uri = "https://app.terraform.io"
   }
 }

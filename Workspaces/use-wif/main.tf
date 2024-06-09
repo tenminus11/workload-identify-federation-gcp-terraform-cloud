@@ -1,6 +1,6 @@
 #-------------------------------------------------------------------------------
 # Consumes Terraform Variable Set 
-# Google Cloud Workload Identity (WIF) for HCP Terraform v1.0.0
+# Google Cloud Workload Identity (WIF) for HCP Terraform 
 #-------------------------------------------------------------------------------
 
 # Local variables 
