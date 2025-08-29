@@ -3,11 +3,16 @@
 # Google Cloud Workload Identity (WIF) for HCP Terraform 
 #-------------------------------------------------------------------------------
 
-# Local variables 
-locals {
-  google_project_id  = "hashitalks-wif-demo"
-  bucket_name_prefix = "hashitalks-use-wif-demo"
+variable "google_project_id" {
+  type        = string
+  description = "The Google Cloud project ID used for deployment."
 }
+
+variable "bucket_name_prefix" {
+  type        = string
+  description = "The Google Cloud gcs name prefix"
+}
+
 
 # Google Storage bucket name randomizer 
 resource "random_id" "bucket_prefix" {
@@ -16,7 +21,7 @@ resource "random_id" "bucket_prefix" {
 
 # Create Google Storage bucket in EU region
 resource "google_storage_bucket" "example" {
-  name     = "${local.bucket_name_prefix}-${random_id.bucket_prefix.hex}"
+  name     = "${var.bucket_name_prefix}-${random_id.bucket_prefix.hex}"
   location = "EU"
-  project  = local.google_project_id
+  project  = var.google_project_id
 }
