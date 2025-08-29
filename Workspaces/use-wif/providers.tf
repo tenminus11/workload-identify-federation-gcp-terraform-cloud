@@ -1,8 +1,8 @@
 terraform {
   cloud {
-    organization = "jliauw-demo-org"
+    organization = "your-org"
     workspaces {
-      name = "use-wif"
+      name = "your-workspace"
     }
   }
 
